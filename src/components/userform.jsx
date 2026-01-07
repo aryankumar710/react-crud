@@ -1,16 +1,19 @@
 import { useState } from "react";
 
+let id = 1;
 
 export const Form = ({data}) => {
 
+  
+
   const [person, setPerson] =  useState({
-    Name: "Aryan",
-    Email: "aryanKumar@gmail.com",
-    Tel: "111111"
+    Id: id,
+    Name: "",
+    Email: "",
+    Tel: ""
   })
 
   const [userlist, setList] = useState([])
-
 
 
   function handleNameChange(e){
@@ -34,13 +37,15 @@ export const Form = ({data}) => {
     });
   }
 
+
   function handleSubmit (e){
     e.preventDefault();
     data(userlist);
     setPerson({
-      Name: "Aryanagain",
-      Email: "aryanagain@gmail.com",
-      Tel: "22222"
+      Id:++id,
+      Name: "",
+      Email: "",
+      Tel: ""
 
     })
   }
@@ -59,7 +64,7 @@ export const Form = ({data}) => {
             bg-pink-50 border border-pink-200
              shadow-sm"
 >
-  {/* Inputs row */}
+
   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
     <input
       type="text"
@@ -89,6 +94,8 @@ export const Form = ({data}) => {
 
     <input
       type="tel"
+      pattern="^\d{10,10}$"
+      minlength="10" maxlength="10"
       value={person.Tel}
       onChange={handleTelChange}
       placeholder="Phone number"
@@ -101,7 +108,6 @@ export const Form = ({data}) => {
     />
   </div>
 
-  {/* Submit button */}
   <div className="flex justify-end">
     <button
       type="submit"

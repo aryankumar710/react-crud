@@ -19,20 +19,13 @@ export const Homepage = () => {
     function handleDelete(data){
         const x = list.filter((a)=>{
                     return(
-                        a.Name !== data
+                        a.Id !== data
                     );
                 })
             setList(
                x
             )        
-    }
-
- 
-
-    
-    
-
-    
+    }   
 
     return(
         <section>
@@ -45,9 +38,9 @@ export const Homepage = () => {
             <h2 className="text-left my-8 text-4xl">List of users</h2>
             <ul className="flex flex-col gap-3">
                 {
-                    list.map((cur, index) => {
+                    list.map((cur) => {
                         return(
-                        <List key={index} name={cur.Name} email={cur.Email} tel={cur.Tel} handleDelete={handleDelete} />
+                        <List key={cur.Id} id={cur.Id} name={cur.Name} email={cur.Email} tel={cur.Tel} handleDelete={handleDelete} />
                         )
                     }) 
                 }

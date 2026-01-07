@@ -1,4 +1,4 @@
-export const List = ({ name, email, tel, handleDelete , handleEdit}) => {
+export const List = ({ id, name, email, tel, handleDelete , handleEdit}) => {
   return (
     <>
       <div
@@ -37,16 +37,14 @@ export const List = ({ name, email, tel, handleDelete , handleEdit}) => {
           </button>
 
           <button
-           onClick={() => handleDelete(name)}
+           onClick={() => handleDelete(id)}
             className="px-4 py-1.5 rounded-lg
                text-sm font-medium
                text-red-700
                bg-red-50
                border border-red-700
                hover:bg-red-100
-               transition"
-
-              
+               transition"              
           >
             Delete
           </button>
