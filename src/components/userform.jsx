@@ -77,6 +77,7 @@ export const Form = ({data}) => {
                  focus:outline-none focus:ring-2
                  focus:ring-sky-400 focus:border-sky-400
                  transition"
+                 required
     />
 
     <input
@@ -90,11 +91,12 @@ export const Form = ({data}) => {
                  focus:outline-none focus:ring-2
                  focus:ring-sky-400 focus:border-sky-400
                  transition"
+                 required
     />
 
     <input
       type="tel"
-      pattern="^\d{10,10}$"
+      pattern="^\d{10}$"
       minlength="10" maxlength="10"
       value={person.Tel}
       onChange={handleTelChange}
@@ -105,6 +107,7 @@ export const Form = ({data}) => {
                  focus:outline-none focus:ring-2
                  focus:ring-sky-400 focus:border-sky-400
                  transition"
+                 required
     />
   </div>
 
